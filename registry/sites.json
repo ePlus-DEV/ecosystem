@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-05",
+  "categories": [
+    { "id": "developer", "name": "Developer Tools" },
+    { "id": "learning", "name": "Learning & Cloud" },
+    { "id": "media", "name": "Media & Lifestyle" },
+    { "id": "utilities", "name": "Everyday Utilities" },
+    { "id": "content", "name": "Content & Community" }
+  ],
+  "sites": [
+    {
+      "id": "free-tier",
+      "name": "Free Tier Hub",
+      "url": "https://free-tier.eplus.dev/",
+      "description": "Explore and compare free cloud, hosting, database and developer services.",
+      "category": "developer",
+      "tags": ["cloud", "hosting", "developer", "free tier", "tools"],
+      "icon": "cloud",
+      "featured": true,
+      "related": ["arcade", "blog", "top-github"],
+      "repository": "ePlus-DEV/free-tier-hub"
+    },
+    {
+      "id": "onair",
+      "name": "ePlus OnAir",
+      "url": "https://radio.eplus.dev/",
+      "description": "Listen to live radio stations from around the world.",
+      "category": "media",
+      "tags": ["radio", "music", "live", "traffic", "entertainment"],
+      "icon": "radio",
+      "featured": true,
+      "related": ["camera"],
+      "repository": "ePlus-DEV/radio.eplus.dev"
+    },
+    {
+      "id": "camera",
+      "name": "TrafficCam HCM",
+      "url": "https://camera-hcm.eplus.dev/",
+      "description": "Check traffic cameras and road conditions across Ho Chi Minh City.",
+      "category": "utilities",
+      "tags": ["traffic", "camera", "city", "transport", "map"],
+      "icon": "camera",
+      "featured": true,
+      "related": ["onair"],
+      "repository": "ePlus-DEV/camera"
+    },
+    {
+      "id": "arcade",
+      "name": "Arcade Points",
+      "url": "https://arcade.eplus.dev/",
+      "description": "Calculate Google Cloud Arcade points, follow tiers and track badges.",
+      "category": "learning",
+      "tags": ["google cloud", "arcade", "points", "badges", "learning"],
+      "icon": "sparkles",
+      "featured": true,
+      "related": ["free-tier", "blog"],
+      "repository": "ePlus-DEV/gcsb-web"
+    },
+    {
+      "id": "blog",
+      "name": "ePlus.DEV Blog",
+      "url": "https://eplus.dev/",
+      "description": "Engineering notes, cloud tutorials and a daily technology brief.",
+      "category": "content",
+      "tags": ["blog", "tutorial", "tech", "news", "guides"],
+      "icon": "book",
+      "featured": false,
+      "related": ["free-tier", "arcade", "top-github"]
+    },
+    {
+      "id": "top-github",
+      "name": "Top GitHub Users",
+      "url": "https://top-github.eplus.dev/",
+      "description": "Browse active GitHub contributors by country and region.",
+      "category": "developer",
+      "tags": ["github", "open source", "community", "ranking"],
+      "icon": "github",
+      "featured": false,
+      "related": ["free-tier", "blog"],
+      "repository": "ePlus-DEV/top-github-users"
+    }
+  ]
+}
