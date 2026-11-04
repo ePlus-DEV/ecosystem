@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Discover the ePlus.DEV ecosystem: developer tools, cloud learning, live radio, traffic utilities and technical resources in one place.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ePlus Ecosystem — One network. More possibilities.">
+  <meta property="og:description" content="One place to discover the websites and tools built by ePlus.DEV.">
+  <meta property="og:url" content="https://eplus-dev.github.io/ecosystem/">
+  <link rel="canonical" href="https://eplus-dev.github.io/ecosystem/">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>ePlus Ecosystem — Discover everything ePlus.DEV</title>
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#projects">Skip to apps</a>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="site-header shell">
+    <a class="brand" href="./" aria-label="ePlus Ecosystem home">
+      <span class="brand-mark" aria-hidden="true"><span class="brand-glyph">e</span><span class="brand-dot"></span></span>
+      <span class="brand-name">ePlus<span class="brand-name-sub">/ ecosystem</span></span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a class="nav-current" href="#projects">Explore</a>
+      <a href="#how-it-works">How it works</a>
+      <a class="nav-docs" href="https://github.com/ePlus-DEV/ecosystem#readme" target="_blank" rel="noopener noreferrer">Developers</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-button" type="button" aria-label="Toggle theme" title="Toggle theme"><span id="theme-icon" aria-hidden="true">☾</span></button>
+      <a class="header-cta" href="https://github.com/ePlus-DEV" target="_blank" rel="noopener noreferrer">Visit GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> THE EPLUS DIGITAL ECOSYSTEM <span class="eyebrow-line"></span> <span class="eyebrow-version">V1.0</span></div>
+        <h1 id="hero-title">One network.<br><em>More possibilities.</em></h1>
+        <p>Discover the tools, ideas and experiences that make up ePlus.DEV. Independently built. Thoughtfully connected.</p>
+        <div class="hero-buttons">
+          <a class="button-primary" href="#projects">Explore the ecosystem <span aria-hidden="true">↗</span></a>
+          <a class="button-quiet" href="https://eplus.dev/" target="_blank" rel="noopener noreferrer">Read our story <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-stats"><div><strong id="total-stat">—</strong><span>Connected apps</span></div><div class="stat-rule"></div><div><strong id="category-stat">—</strong><span>Categories</span></div><div class="stat-rule"></div><div><strong>∞</strong><span>Ways to explore</span></div></div>
+      </div>
+      <div class="orbit-art" aria-hidden="true">
+        <div class="orbit-glow"></div>
+        <div class="orbit orbit-outer"></div><div class="orbit orbit-middle"></div><div class="orbit orbit-inner"></div>
+        <span class="orbit-cross cross-top">✳</span><span class="orbit-cross cross-bottom">+</span>
+        <div class="orbit-center"><span class="orbit-center-e">e</span><span class="orbit-center-spark">✦</span></div>
+        <div class="orbit-node node-cloud"><span>☁</span></div><div class="orbit-node node-radio"><span>♫</span></div><div class="orbit-node node-code"><span>&lt;/&gt;</span></div><div class="orbit-node node-map"><span>◎</span></div><div class="orbit-node node-spark"><span>✦</span></div>
+        <div class="orbit-caption"><span class="caption-indicator"></span> EVERYTHING CONNECTED</div>
+      </div>
+    </section>
+    <section class="directory-section" id="projects" aria-labelledby="projects-title">
+      <div class="shell">
+        <div class="section-heading"><div><div class="section-kicker"><span class="tiny-line"></span> DISCOVER</div><h2 id="projects-title">Explore the network<span class="heading-period">.</span></h2><p>Useful products and resources, all in one place.</p></div><span class="directory-count" id="directory-count">Loading directory…</span></div>
+        <div class="directory-layout">
+          <aside class="filters" aria-label="Category filters">
+            <div class="filter-heading">BROWSE BY CATEGORY</div>
+            <div id="category-list" class="category-list"><button class="category-button active" type="button">All projects</button></div>
+            <div class="sidebar-note"><span class="sidebar-note-icon">✳</span><strong>Built to connect.</strong><p>Every project stands on its own, but the best ideas work better together.</p><a href="https://github.com/ePlus-DEV/ecosystem" target="_blank" rel="noopener noreferrer">How it works <span aria-hidden="true">↗</span></a></div>
+          </aside>
+          <div class="directory-main"><div class="directory-toolbar"><label class="search-wrap"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input id="search" type="search" placeholder="Search apps, services or keywords…" autocomplete="off" aria-controls="site-grid"><kbd>/</kbd></label><label class="sort-label"><span class="sr-only">Sort projects</span><select id="sort"><option value="recommended">Recommended</option><option value="name">Name A–Z</option><option value="category">Category</option></select></label></div><div id="site-grid" class="site-grid" aria-live="polite"><div class="loading-state">Loading the ecosystem…</div></div><div id="empty-state" class="empty-state" hidden><span class="empty-icon">⌕</span><h3>No matching projects</h3><p>Try another keyword or choose a different category.</p><button id="clear-filters" type="button">Clear filters</button></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="connect-section shell" id="how-it-works"><div class="connect-card"><div class="connect-content"><span class="connect-label">AN OPEN, CONNECTED ECOSYSTEM</span><h2>Build independently.<br><em>Grow together.</em></h2><p>A shared site registry, lightweight switcher and meaningful cross-links connect every app—without locking projects into one framework.</p><a href="https://github.com/ePlus-DEV/ecosystem" class="button-primary button-small" target="_blank" rel="noopener noreferrer">Explore on GitHub <span aria-hidden="true">↗</span></a></div><div class="connect-visual" aria-hidden="true"><div class="connect-ring ring-one"></div><div class="connect-ring ring-two"></div><div class="connect-monogram">e</div><span class="connect-dot dot-one"></span><span class="connect-dot dot-two"></span><span class="connect-dot dot-three"></span><span class="connect-dot dot-four"></span></div></div></section>
+  </main>
+  <footer class="site-footer shell"><div class="footer-left"><span class="footer-mark">e<span>✦</span></span><span>Part of <a href="https://eplus.dev/">ePlus.DEV</a><br><small>Exploring technology. Building connections.</small></span></div><div class="footer-links"><a href="https://github.com/ePlus-DEV" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://eplus.dev/" target="_blank" rel="noopener noreferrer">Blog ↗</a><a href="https://github.com/ePlus-DEV/ecosystem/issues" target="_blank" rel="noopener noreferrer">Suggest a site ↗</a></div><span class="footer-copy">© <span id="year">2026</span> ePlus.DEV</span></footer>
+  <noscript><div class="noscript-links"><p>Explore ePlus.DEV projects: <a href="https://free-tier.eplus.dev/">Free Tier Hub</a>, <a href="https://radio.eplus.dev/">ePlus OnAir</a>, <a href="https://camera-hcm.eplus.dev/">TrafficCam HCM</a>, <a href="https://arcade.eplus.dev/">Arcade Points</a>, <a href="https://eplus.dev/">ePlus.DEV Blog</a>, and <a href="https://top-github.eplus.dev/">Top GitHub Users</a>.</p></div></noscript>
+</body>
+</html>

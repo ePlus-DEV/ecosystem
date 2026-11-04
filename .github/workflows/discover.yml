@@ -1,0 +1,35 @@
+name: Discover ecosystem sites
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Discover candidate websites
+        run: node scripts/discover-sites.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Open a proposal PR if candidates change
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          add-paths: registry/candidates.json
+          branch: bot/ecosystem-site-candidates
+          delete-branch: true
+          commit-message: 'chore(registry): update discovered candidate websites'
+          title: 'chore(registry): review discovered ePlus websites'
+          body: |
+            This PR proposes website candidates found from public ePlus-DEV repositories.
+            
+            - Sites are restricted to HTTPS eplus.dev hostnames and must respond to an HTTP probe.
+            - This PR does **not** publish sites. Curate entries manually into `registry/sites.json` before release.
+            - Verify ownership, availability, relevance and production status before approval.
