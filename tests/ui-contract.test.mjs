@@ -54,3 +54,15 @@ test('brand assets match the official ePlus CDN SVGs exactly',async()=>{
   for(const selector of ['brand-symbol','center-logo','foot-logo'])assert.ok(!html.includes('class="'+selector+'">e<sup>+</sup>'),'Handwritten ePlus logo should not appear');
   assert.ok(widget.includes("brandLogoUrl=new URL('assets/brand/logo.svg',base)"));
 });
+
+test('satellite cards and shared widget load real favicon assets with safe fallback',()=>{
+  for(const file of [script,widget]){
+    assert.match(file,/www\\.google\\.com\\/s2\\/favicons\\?domain=/);
+    assert.match(file,/site\\.logoUrl/);
+    assert.match(file,/site\\.faviconUrl/);
+    assert.match(file,/addEventListener\\('error'/);
+    assert.match(file,/referrerPolicy\\s*=\\s*'no-referrer'/);
+  }
+  assert.match(css,/\\.site-favicon/);
+  assert.match(widget,/\\.glyph img/);
+});
