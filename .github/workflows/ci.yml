@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
+          cache-dependency-path: package.json
       - run: npm run check
       - name: Verify static assets exist
         run: test -f index.html && test -f styles.css && test -f app.js && test -f widget.js && test -f registry/sites.json

@@ -90,3 +90,19 @@ Candidates are written only to `registry/candidates.json` by the scheduled workf
 ## Maintainers
 
 [ePlus-DEV](https://github.com/ePlus-DEV) · [Report an issue](https://github.com/ePlus-DEV/ecosystem/issues)
+
+## UI design and preview
+
+The portal follows the approved light blue/white ePlus design, including:
+- Navigation, responsive hero with connected app orbit, central search, horizontal pill filters, 3/2/1 card grid and mobile menu.
+- Featured cards show five highlighted apps plus a discovery card; **Xem tất cả** expands the directory.
+- Favorites stay locally on the visitor's device; no authentication or cross-site tracking is added.
+- Light mode is the default for the portal, with a high-contrast dark option.
+- Vietnamese UI labels come from optional registry fields (`nameVi`, `descriptionVi`, `ecosystemGroup`), and fall back to existing metadata for new sites.
+- The `widget.js` switcher and related suggestions use the same visual style and preserve framework independence.
+
+**SEO safety:** The `<title>`, description, canonical and Open Graph metadata on the portal are unchanged during this redesign. See `tests/ui-contract.test.mjs`.
+
+Preview both embed modes at `preview-widget.html` (marked `noindex`).
+
+**Note:** Sites added to the registry must be checked as production deployments before release; the registry is the live publication list, whereas discovery proposals remain unpublished.

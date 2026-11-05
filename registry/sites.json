@@ -2,11 +2,30 @@
   "version": 1,
   "updatedAt": "2026-11-05",
   "categories": [
-    { "id": "developer", "name": "Developer Tools" },
-    { "id": "learning", "name": "Learning & Cloud" },
-    { "id": "media", "name": "Media & Lifestyle" },
-    { "id": "utilities", "name": "Everyday Utilities" },
-    { "id": "content", "name": "Content & Community" }
+    {
+      "id": "developer",
+      "name": "Developer Tools"
+    },
+    {
+      "id": "learning",
+      "name": "Learning & Cloud"
+    },
+    {
+      "id": "media",
+      "name": "Media & Lifestyle"
+    },
+    {
+      "id": "utilities",
+      "name": "Everyday Utilities"
+    },
+    {
+      "id": "content",
+      "name": "Content & Community"
+    },
+    {
+      "id": "finance",
+      "name": "Finance"
+    }
   ],
   "sites": [
     {
@@ -15,11 +34,24 @@
       "url": "https://free-tier.eplus.dev/",
       "description": "Explore and compare free cloud, hosting, database and developer services.",
       "category": "developer",
-      "tags": ["cloud", "hosting", "developer", "free tier", "tools"],
+      "tags": [
+        "cloud",
+        "hosting",
+        "developer",
+        "free tier",
+        "tools"
+      ],
       "icon": "cloud",
       "featured": true,
-      "related": ["arcade", "blog", "top-github"],
-      "repository": "ePlus-DEV/free-tier-hub"
+      "related": [
+        "arcade",
+        "blog",
+        "top-github"
+      ],
+      "repository": "ePlus-DEV/free-tier-hub",
+      "descriptionVi": "Tổng hợp các dịch vụ free tier và hướng dẫn triển khai.",
+      "ecosystemGroup": "tools",
+      "nameVi": "Free Tier Hub"
     },
     {
       "id": "onair",
@@ -27,11 +59,22 @@
       "url": "https://radio.eplus.dev/",
       "description": "Listen to live radio stations from around the world.",
       "category": "media",
-      "tags": ["radio", "music", "live", "traffic", "entertainment"],
+      "tags": [
+        "radio",
+        "music",
+        "live",
+        "traffic",
+        "entertainment"
+      ],
       "icon": "radio",
       "featured": true,
-      "related": ["camera"],
-      "repository": "ePlus-DEV/radio.eplus.dev"
+      "related": [
+        "camera"
+      ],
+      "repository": "ePlus-DEV/radio.eplus.dev",
+      "descriptionVi": "Nghe radio trực tuyến, VOV và nhiều kênh khác.",
+      "ecosystemGroup": "media",
+      "nameVi": "ePlus OnAir"
     },
     {
       "id": "camera",
@@ -39,11 +82,22 @@
       "url": "https://camera-hcm.eplus.dev/",
       "description": "Check traffic cameras and road conditions across Ho Chi Minh City.",
       "category": "utilities",
-      "tags": ["traffic", "camera", "city", "transport", "map"],
+      "tags": [
+        "traffic",
+        "camera",
+        "city",
+        "transport",
+        "map"
+      ],
       "icon": "camera",
       "featured": true,
-      "related": ["onair"],
-      "repository": "ePlus-DEV/camera"
+      "related": [
+        "onair"
+      ],
+      "repository": "ePlus-DEV/camera",
+      "descriptionVi": "Xem camera giao thông trực tuyến tại TP.HCM.",
+      "ecosystemGroup": "traffic",
+      "nameVi": "TrafficCam HCM"
     },
     {
       "id": "arcade",
@@ -51,11 +105,23 @@
       "url": "https://arcade.eplus.dev/",
       "description": "Calculate Google Cloud Arcade points, follow tiers and track badges.",
       "category": "learning",
-      "tags": ["google cloud", "arcade", "points", "badges", "learning"],
+      "tags": [
+        "google cloud",
+        "arcade",
+        "points",
+        "badges",
+        "learning"
+      ],
       "icon": "sparkles",
-      "featured": true,
-      "related": ["free-tier", "blog"],
-      "repository": "ePlus-DEV/gcsb-web"
+      "featured": false,
+      "related": [
+        "free-tier",
+        "blog"
+      ],
+      "repository": "ePlus-DEV/gcsb-web",
+      "descriptionVi": "Theo dõi điểm Arcade, các mốc và huy hiệu Google Cloud.",
+      "ecosystemGroup": "tools",
+      "nameVi": "Arcade Points"
     },
     {
       "id": "blog",
@@ -63,10 +129,23 @@
       "url": "https://eplus.dev/",
       "description": "Engineering notes, cloud tutorials and a daily technology brief.",
       "category": "content",
-      "tags": ["blog", "tutorial", "tech", "news", "guides"],
+      "tags": [
+        "blog",
+        "tutorial",
+        "tech",
+        "news",
+        "guides"
+      ],
       "icon": "book",
       "featured": false,
-      "related": ["free-tier", "arcade", "top-github"]
+      "related": [
+        "free-tier",
+        "arcade",
+        "top-github"
+      ],
+      "descriptionVi": "Bài viết kỹ thuật, hướng dẫn cloud và tin công nghệ.",
+      "ecosystemGroup": "content",
+      "nameVi": "ePlus.DEV Blog"
     },
     {
       "id": "top-github",
@@ -74,11 +153,65 @@
       "url": "https://top-github.eplus.dev/",
       "description": "Browse active GitHub contributors by country and region.",
       "category": "developer",
-      "tags": ["github", "open source", "community", "ranking"],
+      "tags": [
+        "github",
+        "open source",
+        "community",
+        "ranking"
+      ],
       "icon": "github",
       "featured": false,
-      "related": ["free-tier", "blog"],
-      "repository": "ePlus-DEV/top-github-users"
+      "related": [
+        "free-tier",
+        "blog"
+      ],
+      "repository": "ePlus-DEV/top-github-users",
+      "descriptionVi": "Khám phá cộng đồng và những đóng góp GitHub nổi bật.",
+      "ecosystemGroup": "tools",
+      "nameVi": "Top GitHub Users"
+    },
+    {
+      "id": "bank",
+      "name": "BankHub",
+      "nameVi": "BankHub",
+      "url": "https://bank.eplus.dev/",
+      "description": "Personal bank account and transfer information hub.",
+      "descriptionVi": "Tra cứu thông tin tài khoản, biểu phí và tiện ích tài chính.",
+      "category": "finance",
+      "ecosystemGroup": "finance",
+      "tags": [
+        "bank",
+        "transfer",
+        "donate",
+        "finance"
+      ],
+      "icon": "wallet",
+      "featured": true,
+      "related": [
+        "free-tier"
+      ],
+      "repository": "ePlus-DEV/bank"
+    },
+    {
+      "id": "calendar",
+      "name": "ePlus Calendar",
+      "nameVi": "ePlus Calendar",
+      "url": "https://al.eplus.dev/",
+      "description": "Vietnam holidays, lunar calendar and events.",
+      "descriptionVi": "Lịch, sự kiện và ngày lễ tại Việt Nam.",
+      "category": "utilities",
+      "ecosystemGroup": "utility",
+      "tags": [
+        "calendar",
+        "vietnam",
+        "holiday",
+        "lunar"
+      ],
+      "icon": "calendar",
+      "featured": true,
+      "related": [
+        "blog"
+      ]
     }
   ]
 }
