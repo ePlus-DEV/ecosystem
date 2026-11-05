@@ -36,6 +36,45 @@ function el(tag, className, text) {
 }
 const groupFor = site => site.ecosystemGroup || GROUP_FALLBACK[site.category] || 'tools';
 const groupName = site => GROUPS.find(group => group.id === groupFor(site))?.label || 'Ứng dụng';
+
+function approvedArtworkUrl(site) {
+  for (const candidate of [site.logoUrl, site.faviconUrl]) {
+    if (typeof candidate !== 'string') continue;
+    try {
+      const url = new URL(candidate);
+      if (url.protocol === 'https:' && !url.username && !url.password &&
+          (url.hostname === 'eplus.dev' || url.hostname.endsWith('.eplus.dev'))) return url.href;
+    } catch {}
+  }
+  return null;
+}
+function googleFaviconUrl(site) {
+  return 'https://www.google.com/s2/favicons?domain=' +
+    encodeURIComponent(new URL(site.url).hostname) + '&sz=128';
+}
+function siteArtwork(site) {
+  const box = el('div','card-icon');
+  const fallback = iconSvg(site.icon === 'sparkles' ? 'spark' : site.icon);
+  fallback.hidden = true;
+  const img = el('img','site-favicon');
+  img.alt = '';
+  img.width = 36;
+  img.height = 36;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.referrerPolicy = 'no-referrer';
+  const preferred = approvedArtworkUrl(site);
+  const cached = googleFaviconUrl(site);
+  let usingGoogle = !preferred;
+  img.addEventListener('error',() => {
+    if (!usingGoogle) { usingGoogle = true; img.src = cached; }
+    else { img.remove(); fallback.hidden = false; }
+  });
+  img.src = preferred || cached;
+  box.append(img,fallback);
+  return box;
+}
+
 function saveFavorites(){
   try { localStorage.setItem('eplus-ecosystem-favorites',JSON.stringify([...state.favorites])); } catch {}
 }
@@ -80,7 +119,7 @@ function createCard(site) {
   const card = el('article','app-card');
   card.dataset.icon = ICONS.has(site.icon) ? site.icon : 'grid';
   const main = el('div','card-main');
-  const glyph = el('div','card-icon'); glyph.append(iconSvg(site.icon === 'sparkles' ? 'spark' : site.icon));
+  const glyph = siteArtwork(site);
   const copy = el('div','card-copy');
   const h3 = el('h3');
   const link = el('a','card-name',site.nameVi || site.name);
