@@ -25,9 +25,10 @@ jobs:
         run: npm run check
       - name: Assemble public directory
         run: |
-          mkdir -p dist/registry
+          mkdir -p dist/registry dist/assets/brand
           cp index.html preview-widget.html styles.css app.js widget.js favicon.svg robots.txt .nojekyll dist/
           cp registry/sites.json dist/registry/sites.json
+          cp assets/brand/logo.svg assets/brand/logo-white.svg dist/assets/brand/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
