@@ -44,13 +44,13 @@ test('embed widget remains isolated and validates linked websites',()=>{
 
 test('brand assets match the official ePlus CDN SVGs exactly',async()=>{
   const [colored,white,favicon]=await Promise.all([text('assets/brand/logo.svg'),text('assets/brand/logo-white.svg'),text('favicon.svg')]);
-  const blobSha=source=>createHash('sha1').update('blob '+Buffer.byteLength(source)+'\\0').update(source).digest('hex');
+  const blobSha=source=>createHash('sha1').update('blob '+Buffer.byteLength(source)+'\0').update(source).digest('hex');
   assert.equal(blobSha(colored),'3319912d72631aae61ba3fc51c448fdd0ca6dedb');
   assert.equal(blobSha(white),'6f16a7f17494b7689d25682701c8e661a926b5e6');
   assert.equal(favicon,colored,'Favicon must use the same authentic brand mark');
   assert.ok(html.includes('class="brand-symbol" src="./assets/brand/logo.svg"'));
   assert.ok(html.includes('class="center-logo"><img src="./assets/brand/logo-white.svg"'));
   assert.ok(html.includes('class="foot-logo" src="./assets/brand/logo.svg"'));
-  assert.doesNotMatch(html,/class="(?:brand-symbol|center-logo|foot-logo)">e<sup>\\+<\\/sup>/);
+  for(const selector of ['brand-symbol','center-logo','foot-logo'])assert.ok(!html.includes('class="'+selector+'">e<sup>+</sup>'),'Handwritten ePlus logo should not appear');
   assert.ok(widget.includes("brandLogoUrl=new URL('assets/brand/logo.svg',base)"));
 });
