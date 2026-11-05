@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1020">
+  <meta name="theme-color" content="#f4f8ff">
   <meta name="description" content="Discover the ePlus.DEV ecosystem: developer tools, cloud learning, live radio, traffic utilities and technical resources in one place.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="ePlus Ecosystem — One network. More possibilities.">
@@ -16,61 +16,118 @@
   <script type="module" src="./app.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#projects">Skip to apps</a>
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
-  <header class="site-header shell">
-    <a class="brand" href="./" aria-label="ePlus Ecosystem home">
-      <span class="brand-mark" aria-hidden="true"><span class="brand-glyph">e</span><span class="brand-dot"></span></span>
-      <span class="brand-name">ePlus<span class="brand-name-sub">/ ecosystem</span></span>
-    </a>
-    <nav class="header-nav" aria-label="Main navigation">
-      <a class="nav-current" href="#projects">Explore</a>
-      <a href="#how-it-works">How it works</a>
-      <a class="nav-docs" href="https://github.com/ePlus-DEV/ecosystem#readme" target="_blank" rel="noopener noreferrer">Developers</a>
+  <a class="skip-link" href="#projects">Chuyển đến ứng dụng</a>
+  <svg aria-hidden="true" class="icon-sprite" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5Zm-9 10 9 5 9-5M3 17l9 5 9-5"/></symbol>
+    <symbol id="i-trending" viewBox="0 0 24 24"><path d="M3 17v-5m6 5V8m6 9v-8m6 8V3M3 7l6-3 6 3 6-5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5m0-14.2-1.5 1.5M6.4 17.6l-1.5 1.5"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.5A9 9 0 0 1 8.5 4a9 9 0 1 0 11.5 11.5Z"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M13 4h7v7M20 4l-9 9"/><path d="M20 14v6H4V4h6"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.5 3 6.4 7 .9-5.1 5 1.2 7-6.1-3.3-6.2 3.3 1.2-7-5-5 7-.9z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m7 4 14 8-14 8z"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M20.5 16.8a4.6 4.6 0 0 0-2.6-8.5 6.6 6.6 0 0 0-12.5 2.1 4.2 4.2 0 0 0 .6 8.3H19"/></symbol>
+    <symbol id="i-radio" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M6 8 18 3M7 13h.01M11 13h7M11 17h7"/><circle cx="7" cy="17" r="1.1"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M5 7h3l2-3h4l2 3h3a2 2 0 0 1 2 2v10H3V9a2 2 0 0 1 2-2Z"/><circle cx="12" cy="13" r="3"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M16 13h6v5h-6a2.5 2.5 0 0 1 0-5Zm0 2.5h.01M5 5V3h12"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6m10-6v6M3 10h18"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h15v16H7a3 3 0 0 0-3 2V6a2 2 0 0 1 1-2Z"/><path d="M4 19c0-2 2-2 4-2h12"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-3m12 6v-3c0-1 0-2 .8-2.8C19 16 21 14.5 21 10a7 7 0 0 0-2-5c0-1 0-2-1-3-2 0-3 1-4 2a14 14 0 0 0-4 0C9 3 8 2 6 2c-1 1-1 2-1 3a7 7 0 0 0-2 5c0 4.5 2 6 5.2 6.2C9 17 9 18 9 19v3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M5 8h13v8a6 6 0 0 1-12 0V8Zm13 1h2a2 2 0 0 1 0 4h-2M3 22h18"/></symbol>
+  </svg>
+
+  <div class="page-frame">
+    <header class="header" id="top">
+      <a class="brand" href="./" aria-label="ePlus Ecosystem - Trang chủ">
+        <span class="brand-symbol">e<sup>+</sup></span><span class="brand-word">ePlus</span><span class="brand-chip">Ecosystem</span>
+      </a>
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a class="nav-active" href="#top"><svg class="svg-icon"><use href="#i-home"/></svg> Trang chủ</a>
+        <a href="#projects"><svg class="svg-icon"><use href="#i-grid"/></svg> Ứng dụng</a>
+        <a href="#categories"><svg class="svg-icon"><use href="#i-layers"/></svg> Danh mục</a>
+        <a href="#how-it-works"><svg class="svg-icon"><use href="#i-trending"/></svg> Cập nhật</a>
+      </nav>
+      <div class="header-actions">
+        <button class="round-button search-trigger" id="header-search" type="button" aria-label="Tìm kiếm"><svg class="svg-icon"><use href="#i-search"/></svg></button>
+        <button class="round-button" id="theme-toggle" type="button" aria-label="Đổi giao diện"><svg class="svg-icon"><use id="theme-use" href="#i-sun"/></svg></button>
+        <a class="github-cta" href="https://eplus.dev/" target="_blank" rel="noopener noreferrer">Về ePlus.DEV <svg class="svg-icon"><use href="#i-external"/></svg></a>
+        <button class="round-button mobile-menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Mở menu"><svg class="svg-icon"><use href="#i-menu"/></svg></button>
+      </div>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav" hidden aria-label="Điều hướng di động">
+      <a href="#top">Trang chủ</a><a href="#projects">Ứng dụng</a><a href="#categories">Danh mục</a><a href="#how-it-works">Cập nhật</a>
     </nav>
-    <div class="header-actions">
-      <button id="theme-toggle" class="icon-button" type="button" aria-label="Toggle theme" title="Toggle theme"><span id="theme-icon" aria-hidden="true">☾</span></button>
-      <a class="header-cta" href="https://github.com/ePlus-DEV" target="_blank" rel="noopener noreferrer">Visit GitHub <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-  <main>
-    <section class="hero shell" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="live-dot"></span> THE EPLUS DIGITAL ECOSYSTEM <span class="eyebrow-line"></span> <span class="eyebrow-version">V1.0</span></div>
-        <h1 id="hero-title">One network.<br><em>More possibilities.</em></h1>
-        <p>Discover the tools, ideas and experiences that make up ePlus.DEV. Independently built. Thoughtfully connected.</p>
-        <div class="hero-buttons">
-          <a class="button-primary" href="#projects">Explore the ecosystem <span aria-hidden="true">↗</span></a>
-          <a class="button-quiet" href="https://eplus.dev/" target="_blank" rel="noopener noreferrer">Read our story <span aria-hidden="true">→</span></a>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-text">
+          <p class="eyebrow">KHÁM PHÁ HỆ SINH THÁI EPLUS</p>
+          <h1 id="hero-heading">ePlus <span>Ecosystem</span></h1>
+          <p class="hero-subtitle">Hệ sinh thái các sản phẩm, công cụ và dịch vụ được phát triển bởi ePlus.</p>
+          <div class="hero-features" aria-label="Đặc điểm nổi bật">
+            <span><i><svg class="svg-icon"><use href="#i-grid"/></svg></i> Nhiều ứng dụng hữu ích</span>
+            <span><i><svg class="svg-icon"><use href="#i-bolt"/></svg></i> Kết nối liền mạch</span>
+            <span><i><svg class="svg-icon"><use href="#i-layers"/></svg></i> Cùng một hệ sinh thái</span>
+          </div>
         </div>
-        <div class="hero-stats"><div><strong id="total-stat">—</strong><span>Connected apps</span></div><div class="stat-rule"></div><div><strong id="category-stat">—</strong><span>Categories</span></div><div class="stat-rule"></div><div><strong>∞</strong><span>Ways to explore</span></div></div>
-      </div>
-      <div class="orbit-art" aria-hidden="true">
-        <div class="orbit-glow"></div>
-        <div class="orbit orbit-outer"></div><div class="orbit orbit-middle"></div><div class="orbit orbit-inner"></div>
-        <span class="orbit-cross cross-top">✳</span><span class="orbit-cross cross-bottom">+</span>
-        <div class="orbit-center"><span class="orbit-center-e">e</span><span class="orbit-center-spark">✦</span></div>
-        <div class="orbit-node node-cloud"><span>☁</span></div><div class="orbit-node node-radio"><span>♫</span></div><div class="orbit-node node-code"><span>&lt;/&gt;</span></div><div class="orbit-node node-map"><span>◎</span></div><div class="orbit-node node-spark"><span>✦</span></div>
-        <div class="orbit-caption"><span class="caption-indicator"></span> EVERYTHING CONNECTED</div>
-      </div>
-    </section>
-    <section class="directory-section" id="projects" aria-labelledby="projects-title">
-      <div class="shell">
-        <div class="section-heading"><div><div class="section-kicker"><span class="tiny-line"></span> DISCOVER</div><h2 id="projects-title">Explore the network<span class="heading-period">.</span></h2><p>Useful products and resources, all in one place.</p></div><span class="directory-count" id="directory-count">Loading directory…</span></div>
-        <div class="directory-layout">
-          <aside class="filters" aria-label="Category filters">
-            <div class="filter-heading">BROWSE BY CATEGORY</div>
-            <div id="category-list" class="category-list"><button class="category-button active" type="button">All projects</button></div>
-            <div class="sidebar-note"><span class="sidebar-note-icon">✳</span><strong>Built to connect.</strong><p>Every project stands on its own, but the best ideas work better together.</p><a href="https://github.com/ePlus-DEV/ecosystem" target="_blank" rel="noopener noreferrer">How it works <span aria-hidden="true">↗</span></a></div>
-          </aside>
-          <div class="directory-main"><div class="directory-toolbar"><label class="search-wrap"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Search projects</span><input id="search" type="search" placeholder="Search apps, services or keywords…" autocomplete="off" aria-controls="site-grid"><kbd>/</kbd></label><label class="sort-label"><span class="sr-only">Sort projects</span><select id="sort"><option value="recommended">Recommended</option><option value="name">Name A–Z</option><option value="category">Category</option></select></label></div><div id="site-grid" class="site-grid" aria-live="polite"><div class="loading-state">Loading the ecosystem…</div></div><div id="empty-state" class="empty-state" hidden><span class="empty-icon">⌕</span><h3>No matching projects</h3><p>Try another keyword or choose a different category.</p><button id="clear-filters" type="button">Clear filters</button></div></div>
+        <div class="hero-illustration" aria-hidden="true">
+          <div class="orbit-base"></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="center-logo">e<sup>+</sup></div>
+          <span class="orbit-bubble bubble-radio"><svg class="svg-icon"><use href="#i-radio"/></svg></span>
+          <span class="orbit-bubble bubble-camera"><svg class="svg-icon"><use href="#i-camera"/></svg></span>
+          <span class="orbit-bubble bubble-cloud"><svg class="svg-icon"><use href="#i-cloud"/></svg></span>
+          <span class="orbit-bubble bubble-wallet"><svg class="svg-icon"><use href="#i-wallet"/></svg></span>
+          <span class="orbit-bubble bubble-calendar"><svg class="svg-icon"><use href="#i-calendar"/></svg></span>
         </div>
-      </div>
-    </section>
-    <section class="connect-section shell" id="how-it-works"><div class="connect-card"><div class="connect-content"><span class="connect-label">AN OPEN, CONNECTED ECOSYSTEM</span><h2>Build independently.<br><em>Grow together.</em></h2><p>A shared site registry, lightweight switcher and meaningful cross-links connect every app—without locking projects into one framework.</p><a href="https://github.com/ePlus-DEV/ecosystem" class="button-primary button-small" target="_blank" rel="noopener noreferrer">Explore on GitHub <span aria-hidden="true">↗</span></a></div><div class="connect-visual" aria-hidden="true"><div class="connect-ring ring-one"></div><div class="connect-ring ring-two"></div><div class="connect-monogram">e</div><span class="connect-dot dot-one"></span><span class="connect-dot dot-two"></span><span class="connect-dot dot-three"></span><span class="connect-dot dot-four"></span></div></div></section>
-  </main>
-  <footer class="site-footer shell"><div class="footer-left"><span class="footer-mark">e<span>✦</span></span><span>Part of <a href="https://eplus.dev/">ePlus.DEV</a><br><small>Exploring technology. Building connections.</small></span></div><div class="footer-links"><a href="https://github.com/ePlus-DEV" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://eplus.dev/" target="_blank" rel="noopener noreferrer">Blog ↗</a><a href="https://github.com/ePlus-DEV/ecosystem/issues" target="_blank" rel="noopener noreferrer">Suggest a site ↗</a></div><span class="footer-copy">© <span id="year">2026</span> ePlus.DEV</span></footer>
+      </section>
+
+      <section class="explore-section" id="projects" aria-labelledby="featured-title">
+        <div class="search-bar">
+          <svg class="svg-icon"><use href="#i-search"/></svg>
+          <label for="search" class="sr-only">Tìm ứng dụng, công cụ hoặc dịch vụ</label>
+          <input id="search" type="search" autocomplete="off" placeholder="Tìm ứng dụng, công cụ hoặc dịch vụ..." aria-controls="site-grid">
+          <kbd aria-hidden="true">⌘ K</kbd>
+        </div>
+        <div class="category-tabs" id="categories" aria-label="Lọc ứng dụng theo danh mục">
+          <div id="category-list" class="category-scroll">
+            <button class="category-button active" type="button">Tất cả</button>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <h2 id="featured-title"><svg class="svg-icon heading-star"><use href="#i-star"/></svg> Ứng dụng nổi bật</h2>
+          <button id="show-all" class="show-all" type="button">Xem tất cả <svg class="svg-icon"><use href="#i-arrow"/></svg></button>
+        </div>
+        <div id="site-grid" class="site-grid" aria-live="polite">
+          <p class="loading-state">Đang tải danh sách ứng dụng...</p>
+        </div>
+        <div id="empty-state" class="empty-state" hidden>
+          <h3>Không có ứng dụng phù hợp</h3>
+          <p>Thử từ khóa hoặc danh mục khác nhé.</p>
+          <button id="clear-filters" type="button">Xóa bộ lọc</button>
+        </div>
+      </section>
+
+      <section class="mini-info" id="how-it-works">
+        <div><span class="info-icon"><svg class="svg-icon"><use href="#i-layers"/></svg></span><div><strong>Một hệ sinh thái. Nhiều trải nghiệm.</strong><p>Mỗi website hoạt động độc lập nhưng cùng kết nối để bạn khám phá thuận tiện hơn.</p></div></div>
+        <a href="https://github.com/ePlus-DEV/ecosystem" target="_blank" rel="noopener noreferrer">Khám phá mã nguồn <svg class="svg-icon"><use href="#i-arrow"/></svg></a>
+      </section>
+    </main>
+    <footer class="footer">
+      <span><strong class="foot-logo">e<sup>+</sup></strong> Phát triển bởi <a href="https://eplus.dev/">ePlus.DEV</a></span>
+      <span>© <span id="year">2026</span> ePlus.DEV</span>
+      <a href="https://github.com/ePlus-DEV/ecosystem/issues" target="_blank" rel="noopener noreferrer">Góp ý dịch vụ <svg class="svg-icon"><use href="#i-external"/></svg></a>
+    </footer>
+  </div>
+
   <noscript><div class="noscript-links"><p>Explore ePlus.DEV projects: <a href="https://free-tier.eplus.dev/">Free Tier Hub</a>, <a href="https://radio.eplus.dev/">ePlus OnAir</a>, <a href="https://camera-hcm.eplus.dev/">TrafficCam HCM</a>, <a href="https://arcade.eplus.dev/">Arcade Points</a>, <a href="https://eplus.dev/">ePlus.DEV Blog</a>, and <a href="https://top-github.eplus.dev/">Top GitHub Users</a>.</p></div></noscript>
 </body>
 </html>

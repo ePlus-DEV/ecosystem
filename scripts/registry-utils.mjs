@@ -1,5 +1,5 @@
-export const ALLOWED_CATEGORIES = new Set(['developer','learning','media','utilities','content']);
-export const ALLOWED_ICONS = new Set(['cloud','radio','camera','sparkles','book','github','globe']);
+export const ALLOWED_CATEGORIES = new Set(['developer','learning','media','utilities','content','finance']);
+export const ALLOWED_ICONS = new Set(['cloud','radio','camera','sparkles','book','github','globe','wallet','calendar']);
 export function isEplusUrl(value) {
   try {const url=new URL(value);return url.protocol==='https:'&&!!url.hostname&&(url.hostname==='eplus.dev'||url.hostname.endsWith('.eplus.dev'))&&url.username===''&&url.password==='';}
   catch{return false;}
@@ -24,6 +24,9 @@ export function validateRegistry(data) {
     if(typeof site.featured!=='boolean')errors.push(`${id}: featured must be boolean`);
     if(!Array.isArray(site.tags)||site.tags.length===0||site.tags.some(tag=>typeof tag!=='string'||!tag.trim()))errors.push(`${id}: tags must be non-empty strings`);
     if(!Array.isArray(site.related)||site.related.some(other=>typeof other!=='string'))errors.push(`${id}: related must be an array of ids`);
+    if(site.nameVi !== undefined && (typeof site.nameVi !== 'string' || !site.nameVi.trim())) errors.push(`${id}: invalid Vietnamese name`);
+    if(site.descriptionVi !== undefined && (typeof site.descriptionVi !== 'string' || !site.descriptionVi.trim())) errors.push(`${id}: invalid Vietnamese description`);
+    if(site.ecosystemGroup !== undefined && !['media','tools','traffic','finance','utility','content'].includes(site.ecosystemGroup)) errors.push(`${id}: invalid ecosystem group`);
     if(site.repository!==undefined&&!/^ePlus-DEV\/[a-zA-Z0-9._-]+$/.test(site.repository))errors.push(`${id}: invalid GitHub repository`);
   }
   for(const site of data.sites){if(!site||!Array.isArray(site.related))continue;for(const related of site.related){if(related===site.id)errors.push(`${site.id}: cannot relate to itself`);else if(!siteIds.has(related))errors.push(`${site.id}: unknown relation ${related}`);}}

@@ -7,3 +7,6 @@
 - Portal and widget must not force-redirect or change canonical URLs, cookies, consent or GA4 of host sites.
 - Run `npm run check` after modifying registry, scripts or site code. Use a PR; do not push directly to main.
 - Keep public paths compatible with `https://eplus-dev.github.io/ecosystem/` until an approved custom domain is configured.
+- **SEO content freeze:** Never change `<title>`, meta description, canonical, Open Graph title/description/URL, robots directives or other existing SEO text without explicit owner approval. Visual redesigns must preserve this metadata byte-for-byte unless change is explicitly requested.
+- UI changes must match the approved reference: white/blue responsive portal, horizontal category pills, compact app cards, mobile single column, matching light widget. Verify viewports 320, 390, 430, 768, 1024, and 1440px; avoid page-wide overflow hacks to hide root causes.
+- Do not edit `registry/sites.json` to alter a URL or project description without validation. Vietnamese UI labels (`descriptionVi`, `nameVi`) are display translations, not SEO overrides.
