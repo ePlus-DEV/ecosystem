@@ -106,3 +106,7 @@ The portal follows the approved light blue/white ePlus design, including:
 Preview both embed modes at `preview-widget.html` (marked `noindex`).
 
 **Note:** Sites added to the registry must be checked as production deployments before release; the registry is the live publication list, whereas discovery proposals remain unpublished.
+
+## Brand assets
+
+The official ePlus mark in the portal header, hero, footer, favicon and embedded widget is cloned unchanged from [ePlus CDN](https://github.com/ePlus-DEV/cdn.eplus.dev/tree/main/img/brand) at revision `54858b166e3be9062b134e01b8ed6aa8b5e15fac`. `assets/brand/logo.svg` is multicolor and `assets/brand/logo-white.svg` is used on the blue hero tile. Never recreate the logo with CSS/text.

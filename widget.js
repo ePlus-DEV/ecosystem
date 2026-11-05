@@ -6,6 +6,7 @@
   const base=script?.src ? new URL('.',script.src) : new URL('./',document.baseURI);
   const registryUrl=new URL('registry/sites.json',base).href;
   const portalUrl=base.href;
+  const brandLogoUrl=new URL('assets/brand/logo.svg',base).href;
   const requests=new Map();
   let instance=0;
   const GLYPHS={
@@ -37,6 +38,8 @@
       max-height:min(570px,75vh);overflow:auto}
     .panel[hidden]{display:none}
     .head{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:13px}
+    .head-brand-logo{display:block;width:30px;height:30px;flex:0 0 30px;object-fit:contain}
+    .head-copy{flex:1;min-width:0}
     .head-title{font-size:15px;font-weight:850;line-height:1.3}
     .head-sub{display:block;color:var(--ee-muted);font-size:11px;margin-top:4px}
     .close{display:grid;place-items:center;border:1px solid var(--ee-border);width:30px;height:30px;border-radius:9px;background:var(--ee-soft);color:var(--ee-text)}
@@ -142,9 +145,10 @@
       panel.id=this._id;if(!related)panel.hidden=true;
       if(!related){
         const head=node('div','head');
-        const copy=node('div');copy.append(node('div','head-title','Khám phá hệ sinh thái ePlus'),node('span','head-sub','Các ứng dụng liên kết với nhau'));
+        const brandIcon=node('img','head-brand-logo');brandIcon.src=brandLogoUrl;brandIcon.alt='';brandIcon.width=30;brandIcon.height=30;brandIcon.decoding='async';
+        const copy=node('div','head-copy');copy.append(node('div','head-title','Khám phá hệ sinh thái ePlus'),node('span','head-sub','Các ứng dụng liên kết với nhau'));
         const close=node('button','close','×');close.type='button';close.setAttribute('aria-label','Đóng menu');close.addEventListener('click',()=>this.toggle(false));
-        head.append(copy,close);panel.append(head);
+        head.append(brandIcon,copy,close);panel.append(head);
       }
       const loading=node('div','loading','Đang tải ứng dụng…');panel.append(loading);wrapper.append(panel);shadow.append(wrapper);
       getRegistry(this.endpoint).then(sites=>{

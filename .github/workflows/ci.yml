@@ -17,4 +17,4 @@ jobs:
           cache-dependency-path: package.json
       - run: npm run check
       - name: Verify static assets exist
-        run: test -f index.html && test -f styles.css && test -f app.js && test -f widget.js && test -f registry/sites.json
+        run: test -f index.html && test -f styles.css && test -f app.js && test -f widget.js && test -f registry/sites.json && test -f assets/brand/logo.svg && test -f assets/brand/logo-white.svg && test -f favicon.svg
