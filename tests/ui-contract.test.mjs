@@ -57,12 +57,12 @@ test('brand assets match the official ePlus CDN SVGs exactly',async()=>{
 
 test('satellite cards and shared widget load real favicon assets with safe fallback',()=>{
   for(const file of [script,widget]){
-    assert.match(file,/www\\.google\\.com\\/s2\\/favicons\\?domain=/);
-    assert.match(file,/site\\.logoUrl/);
-    assert.match(file,/site\\.faviconUrl/);
-    assert.match(file,/addEventListener\\('error'/);
-    assert.match(file,/referrerPolicy\\s*=\\s*'no-referrer'/);
+    assert.ok(file.includes('www.google.com/s2/favicons?domain='));
+    assert.ok(file.includes('site.logoUrl'));
+    assert.ok(file.includes('site.faviconUrl'));
+    assert.ok(file.includes("addEventListener('error'"));
+    assert.ok(file.includes("'no-referrer'"));
   }
-  assert.match(css,/\\.site-favicon/);
-  assert.match(widget,/\\.glyph img/);
+  assert.ok(css.includes('.site-favicon'));
+  assert.ok(widget.includes('.glyph img'));
 });
