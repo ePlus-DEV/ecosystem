@@ -110,3 +110,14 @@ Preview both embed modes at `preview-widget.html` (marked `noindex`).
 ## Brand assets
 
 The official ePlus mark in the portal header, hero, footer, favicon and embedded widget is cloned unchanged from [ePlus CDN](https://github.com/ePlus-DEV/cdn.eplus.dev/tree/main/img/brand) at revision `54858b166e3be9062b134e01b8ed6aa8b5e15fac`. `assets/brand/logo.svg` is multicolor and `assets/brand/logo-white.svg` is used on the blue hero tile. Never recreate the logo with CSS/text.
+
+## Satellite website icons
+
+The portal cards and cross-site widget display each website's **real favicon**, instead of the category illustration. Artwork follows this priority:
+
+1. Curated `logoUrl` in `registry/sites.json` (optional, HTTPS on eplus.dev or an ePlus subdomain).
+2. Curated `faviconUrl` in the same record (optional, same trusted-domain restriction).
+3. Google's cached favicon: `https://www.google.com/s2/favicons?domain=<hostname>&sz=128`.
+4. Existing category SVG if the remote image request fails.
+
+Both images are decorative (`alt=""`) because each card's linked website name is already accessible. Icons use `loading="lazy"`, `object-fit:contain`, and no-referrer requests. Google may return an old or generic icon even with HTTP 200; for exact brand identity, publish a reviewed first-party `logoUrl`. The Google fallback involves an external browser request and may be blocked by an embedding website's Content Security Policy. The fallback SVG remains available. This does not change individual websites' actual browser favicon or SEO metadata.
