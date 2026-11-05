@@ -49,6 +49,8 @@
     .item:hover{background:var(--ee-soft);border-color:var(--ee-border)}
     .glyph{width:47px;height:47px;border-radius:13px;display:grid;place-items:center;flex-shrink:0}
     .glyph svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .glyph img{display:block;width:32px;height:32px;object-fit:contain}
+    .glyph svg[hidden]{display:none}
     .item-title{display:block;max-width:100%;font-size:11px;font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .view-all{display:flex;align-items:center;justify-content:center;color:var(--ee-blue);font-size:12px;font-weight:800;gap:7px;
       border-top:1px solid var(--ee-border);padding:14px 0 0;margin-top:10px}
@@ -77,12 +79,35 @@
     return requests.get(url);
   }
   const node=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el;};
+  function approvedArtworkUrl(site) {
+    for (const candidate of [site.logoUrl,site.faviconUrl]) {
+      if (typeof candidate !== 'string') continue;
+      try {
+        const url=new URL(candidate);
+        if (url.protocol==='https:'&&!url.username&&!url.password&&
+            (url.hostname==='eplus.dev'||url.hostname.endsWith('.eplus.dev'))) return url.href;
+      } catch {}
+    }
+    return null;
+  }
   function icon(site){
     const [color,bg,path]=GLYPHS[site.icon] || GLYPHS.globe;
     const container=node('span','glyph');container.style.color=color;container.style.background=bg;
     const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
     svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');
-    const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',path);svg.append(p);container.append(svg);
+    const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',path);svg.append(p);
+    svg.hidden=true;
+    const image=node('img','satellite-favicon');
+    image.alt='';image.width=32;image.height=32;image.loading='lazy';image.decoding='async';image.referrerPolicy='no-referrer';
+    const google='https://www.google.com/s2/favicons?domain='+encodeURIComponent(new URL(site.url).hostname)+'&sz=128';
+    const preferred=approvedArtworkUrl(site);
+    let usingGoogle=!preferred;
+    image.addEventListener('error',()=>{
+      if(!usingGoogle){usingGoogle=true;image.src=google;}
+      else {image.remove();svg.hidden=false;}
+    });
+    image.src=preferred||google;
+    container.append(image,svg);
     return container;
   }
   class EPlusEcosystem extends HTMLElement {

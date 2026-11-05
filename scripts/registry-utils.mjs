@@ -21,6 +21,10 @@ export function validateRegistry(data) {
     else {const url=new URL(site.url).href;if(urls.has(url))errors.push(`${id}: duplicate URL ${url}`);urls.add(url);}
     if(!categoryIds.has(site.category))errors.push(`${id}: unknown category ${site.category}`);
     if(!ALLOWED_ICONS.has(site.icon))errors.push(`${id}: invalid icon ${site.icon}`);
+    for(const key of ['logoUrl','faviconUrl']){
+      if(site[key]!==undefined && (typeof site[key]!=='string'||!isEplusUrl(site[key])))
+        errors.push(`${id}: ${key} must be a trusted HTTPS ePlus asset URL`);
+    }
     if(typeof site.featured!=='boolean')errors.push(`${id}: featured must be boolean`);
     if(!Array.isArray(site.tags)||site.tags.length===0||site.tags.some(tag=>typeof tag!=='string'||!tag.trim()))errors.push(`${id}: tags must be non-empty strings`);
     if(!Array.isArray(site.related)||site.related.some(other=>typeof other!=='string'))errors.push(`${id}: related must be an array of ids`);
