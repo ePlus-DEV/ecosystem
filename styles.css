@@ -139,6 +139,8 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:2px solid var(
 .card-main {display:flex;align-items:flex-start;gap:13px;min-width:0;flex:1}
 .card-icon {width:54px;height:54px;flex:0 0 54px;border-radius:14px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.6);background:#e9efff;color:var(--blue)}
 .card-icon .svg-icon {width:29px;height:29px;stroke-width:2}
+.card-icon .site-favicon {display:block;width:36px;height:36px;object-fit:contain}
+.card-icon .svg-icon[hidden] {display:none}
 .app-card[data-icon="radio"] .card-icon {color:#7342d2;background:linear-gradient(140deg,#efe8ff,#e7e2ff)}
 .app-card[data-icon="cloud"] .card-icon {color:#1289ee;background:linear-gradient(140deg,#e2f4ff,#e8efff)}
 .app-card[data-icon="camera"] .card-icon {color:#05a979;background:linear-gradient(140deg,#d8fff3,#d9f6f7)}
