@@ -1,0 +1,14 @@
+{
+  "name": "@eplus-dev/ecosystem",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A zero-dependency ecosystem portal, shared site switcher and site registry.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate-registry.mjs",
+    "discover": "node scripts/discover-sites.mjs",
+    "check": "npm run validate && npm test"
+  }
+}
