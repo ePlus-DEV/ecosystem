@@ -1,4 +1,61 @@
 {
   "generatedAt": null,
-  "candidates": []
+  "candidates": [
+    {
+      "repository": "ePlus-DEV/cdn.eplus.dev",
+      "domain": "cdn.eplus.dev",
+      "url": "https://cdn.eplus.dev/",
+      "description": "CDN (Content Delivery Network)",
+      "source": "homepage"
+    },
+    {
+      "repository": "ePlus-DEV/metrics",
+      "domain": "metrics.eplus.dev",
+      "url": "https://metrics.eplus.dev/",
+      "description": "Get metrics",
+      "source": "homepage"
+    },
+    {
+      "repository": "ePlus-DEV/news",
+      "domain": "news.eplus.dev",
+      "url": "https://news.eplus.dev/",
+      "description": "Lấy tin tức báo Việt Nam mới nhất",
+      "source": "homepage"
+    },
+    {
+      "repository": "ePlus-DEV/onair-pr-previews",
+      "domain": "preview.radio.eplus.dev",
+      "url": "https://preview.radio.eplus.dev/",
+      "description": "onair-pr-previews",
+      "source": "homepage"
+    },
+    {
+      "repository": "ePlus-DEV/eplus-report",
+      "domain": "report.eplus.dev",
+      "url": "https://report.eplus.dev/",
+      "description": "",
+      "source": "homepage"
+    },
+    {
+      "repository": "ePlus-DEV/onair-staging-pages",
+      "domain": "stg.radio.eplus.dev",
+      "url": "https://stg.radio.eplus.dev/",
+      "description": "onair-staging-pages",
+      "source": "homepage"
+    },
+    {
+      "repository": "ePlus-DEV/top-github-users",
+      "domain": "top-github-users.eplus.dev",
+      "url": "https://top-github-users.eplus.dev/",
+      "description": "Top GitHub Users",
+      "source": "homepage"
+    },
+    {
+      "repository": "ePlus-DEV/trips",
+      "domain": "trips.eplus.dev",
+      "url": "https://trips.eplus.dev/",
+      "description": "Trip",
+      "source": "homepage"
+    }
+  ]
 }
